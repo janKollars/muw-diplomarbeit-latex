@@ -3,6 +3,7 @@
 
 Die nächsten Absätze können gelöscht werden und sollen nur eine Einleitung in Latex bieten.
 
+
 \section{Strukturierung}
 \label{ch:resultate:strukturierung}
 
@@ -19,18 +20,19 @@ Die nächsten Absätze können gelöscht werden und sollen nur eine Einleitung i
 
 Man kann auch auf vorherige Abschnitt verweisen (siehe \autoref{ch:resultate:strukturierung}). Wenn man sich nur die Zahl des Abschnittes ohne das Wort Kapitel/Abschnitt/\dots ausgeben lassen möchte, verwendet man~\ref{ch:resultate:strukturierung}. Die Tilde verhindert, dass die Referenz auf eine neue Zeile umbricht.
 
+
 \section{Zitieren}
 
-In der Datei \verb|biblatex.bib| befindet sich die Information über die Quellen, auf die man verweisen möchte. Diese Datei kann man sich von einem ``reference management program'' z.B. Zotero\footnote{\href{https://www.zotero.org/}{https://www.zotero.org/}} generieren lassen. Wichtig ist, dass sie im Format Biblatex --- nicht Bibtex --- vorliegt. Jetzt kann auf diese Quelle auf mehrere Arten verweisen (die ersten zwei sind vermutlich am wichtigsten):
+In der Datei \verb|biblatex.bib| befindet sich die Information über die Quellen, auf die man verweisen möchte. Diese Datei kann man sich von einem ``reference management program'' z.B. Zotero\footnote{\href{https://www.zotero.org/}{https://www.zotero.org/}} generieren lassen. Wichtig ist, dass sie im Format Biblatex --- nicht Bibtex --- vorliegt. Jetzt kann auf diese Quelle auf mehrere Arten verweisen:
 
 \begin{itemize}
-    \item Wie auch \cite{appelman_rose_1998} herausgefunden haben, kann man die Namen verwenden.
-    \item Gelegentlich wird aber nur in einer Klammer zitiert \parencite{appelman_rose_1998}.
+    \item Mit \verb|\cite{nachname_titel_jahr}| wird eine eckige Klammer mit der Laufnummer hinzugefügt~\cite{appelman_rose_1998}.
     \item Vielleicht möchte man nur die Namen der Autoren \citeauthor[hier noch ein Zusatz]{appelman_rose_1998} anführen.
     \item Der Titel lautet \citetitle{appelman_rose_1998}
     \item Geschrieben wurde das Paper \citeyear{appelman_rose_1998}.
     \item \dots
 \end{itemize}
+
 
 \section{Abbildung}
 
@@ -44,6 +46,7 @@ Mit \verb|\includegraphics{dateiname-in-graphics-folder}| wird die eigentliche \
     \caption{Meine erste Abbildung.}
     \label{fig:meine-abbildung}
 \end{figure}
+
 
 \newpage
 \section{Tabellen}
