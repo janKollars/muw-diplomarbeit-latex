@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[left= 3cm,right = 3cm, bottom = 3.5 cm, top = 3 cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage{xfrac}
+\usepackage{multirow}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage[ngerman]{babel}
+
+\usepackage[backend=biber, style=apa, citestyle=authoryear, sorting=ynt]{biblatex}
+\addbibresource{biblatex.bib}
+
+\include{Settings}
+
+% define colors
+\usepackage{color}
+\definecolor{MDWblue}{RGB}{7, 29, 78}
+
+% set font
+\usepackage{mathptmx}
+\setkomafont{disposition}{\bfseries}
+\setkomafont{chapter}{\normalfont\huge}
+\setkomafont{section}{\normalfont\Large}
+\setkomafont{subsection}{\normalfont\large}
+
+% set styles for headings
+\RedeclareSectionCommand[
+  %runin=false,
+  afterindent=false,
+  beforeskip=0pt,
+  afterskip=\baselineskip]{chapter}
+\RedeclareSectionCommand[
+  %runin=false,
+  afterindent=false,
+  beforeskip=\baselineskip,
+  afterskip=0.5\baselineskip]{section}
+\RedeclareSectionCommand[
+  %runin=false,
+  afterindent=false,
+  beforeskip=.75\baselineskip,
+  afterskip=.5\baselineskip]{subsection}
+
+% remove spacing between and around list items (enumerate and itemize)
+\usepackage{enumitem}
+\setlist{nosep}
+
+\usepackage[
+	pdftitle={\workTitle},
+	pdfsubject={},
+	pdfauthor={\studentFirstName \studentLastName},
+	pdfkeywords={}
+	pdftex=true, 
+	colorlinks=true,
+ 	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,	
+	menucolor=black,	
+	urlcolor=black
+]{hyperref}
+
+% Set meta data for PDF
+\title{\workTitle}
+\date{\dateYear-\dateMonth-\dateDay}
+\author{\studentFirstName \studentLastName}
+
+\begin{document}
+\begin{titlepage}
+    \newgeometry{left=0.4cm,right=0.4cm,bottom=1cm,top=1cm}
+    \color{MDWblue}
+    \includegraphics[width=5.7cm]{uni-logo.png}
+
+    \begin{center}
+        \vspace*{1cm}
+
+        \large Diplomarbeit \\
+        \vspace{0.5cm}
+        \Large\textbf{\workTitle}
+
+        \vspace{3cm}
+
+        \small zur Erlangung des akademischen Grades \\
+        \large
+        Doktor(in) der gesamten Heilkunde \\
+        (Dr.med.univ.) \\
+        \vspace{0.3cm}
+        \small an der \\
+        \large Medizinischen Universität Wien \\
+        \vspace{0.3cm}
+        \small
+        ausgeführt am \dateDay.\dateMonth.\dateYear \\
+        \location
+
+        \vspace{1cm}
+
+        unter der Anleitung von \\
+        \advisorPreTitle\ \advisoFirstName\ \advisorLastName \if\advisorPosTitle\empty\else, \advisorPosTitle \fi \\
+        Name der Co-BetreuerIn/des Co-Betreuers (nur 1 Angabe möglich, wenn vorhanden) \\
+
+        \vspace{1cm}
+
+        eingereicht von \\
+        \textbf{\studentFirstName\ \studentLastName} \\
+        \studentId
+
+        \vfill
+
+        \hfill\place, \dateDay.\dateMonth.\dateYear \hfill \includegraphics[width=3cm]{signature.png}\hspace*{\stretch{1}}
+        \\[3.5cm]
+
+    \end{center}
+\end{titlepage}
+
+\restoregeometry
+
+\pagenumbering{Roman}
+
+\newpage
+\tableofcontents
+
+\newpage
+\include{chapters/a_Kurzfassung}
+
+\newpage
+\include{chapters/b_Abstract}
+
+\pagenumbering{arabic}
+
+\include{chapters/01_Einleitung}
+\include{chapters/02_Methoden}
+\include{chapters/03_Resultate}
+\include{chapters/04_Diskussion}
+\include{chapters/05_Limitationen}
+
+\newpage
+\printbibliography
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+\end{document}
